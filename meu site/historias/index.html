@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórias — Douradinho</title>
+  <meta name="description" content="Leia as histórias reais contadas por pessoas que viveram momentos inesquecíveis com o Douradinho.">
+  <meta name="theme-color" content="#0A1F44">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-historias-url="../dados/historias.json">
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a href="../index.html" class="logo" aria-label="Douradinho — página inicial">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" role="presentation">
+            <circle cx="16" cy="16" r="14" fill="var(--dourado)"/>
+            <text x="16" y="21" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="800" font-size="16" fill="var(--azul-900)">D</text>
+          </svg>
+        </span>
+        <span class="logo-text">Douradinho</span>
+      </a>
+
+      <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu de navegação">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+
+      <nav id="menu-principal" class="main-nav" aria-label="Navegação principal" data-nav>
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="./" class="is-active" aria-current="page">Histórias</a></li>
+          <li><a href="../festas/">Festas</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="page-hero" aria-labelledby="titulo-pagina">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Trilha de navegação">
+          <a href="../index.html">Início</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Histórias</span>
+        </nav>
+        <h1 id="titulo-pagina" class="page-title">Histórias</h1>
+        <p class="page-subtitle">Relatos reais de pessoas reais — guardados com carinho e compartilhados com o coração.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Todas as histórias">
+      <div class="container">
+        <div class="search-bar">
+          <label class="visually-hidden" for="campo-busca">Buscar histórias por título, autor ou conteúdo</label>
+          <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+          <input type="search" id="campo-busca" placeholder="Busque por título, autor ou conteúdo..." autocomplete="off">
+        </div>
+        <p class="search-hint" data-results-count aria-live="polite"></p>
+
+        <div class="stories-grid" data-stories-list aria-live="polite">
+          <div class="skeleton-card" aria-hidden="true"></div>
+          <div class="skeleton-card" aria-hidden="true"></div>
+          <div class="skeleton-card" aria-hidden="true"></div>
+          <div class="skeleton-card" aria-hidden="true"></div>
+        </div>
+        <div class="empty-state" data-empty hidden>
+          <h2>Nenhuma história encontrada</h2>
+          <p>Tente buscar por outro termo ou recarregue a página.</p>
+        </div>
+        <div class="error-state" data-error hidden>
+          <h2>Não conseguimos carregar as histórias</h2>
+          <p>Algo deu errado ao buscar os relatos. Recarregue a página e tente novamente.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL DE HISTÓRIA -->
+  <div class="modal" data-modal hidden>
+    <div class="modal-overlay" data-modal-close></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <button class="modal-close" data-modal-close aria-label="Fechar história">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="modal-body">
+        <p class="modal-meta" id="modal-meta"></p>
+        <h2 id="modal-titulo" class="modal-title"></h2>
+        <p class="modal-author" id="modal-autor"></p>
+        <p class="modal-content" id="modal-conteudo"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text logo-text--light">Douradinho</span>
+        <p>Histórias e festas que aquecem o coração.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="./">Histórias</a></li>
+          <li><a href="../festas/">Festas</a></li>
+        </ul>
+      </nav>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram do Douradinho">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook do Douradinho">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M13 22v-8h2.7l.5-3H13V9.2c0-.9.3-1.6 1.7-1.6h1.4V5c-.4-.1-1.2-.2-2.2-.2-2.3 0-3.9 1.4-3.9 4V11H7v3h3v8h3z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube do Douradinho">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M23 12s0-3.3-.4-4.8c-.2-.9-.9-1.6-1.8-1.8C19.2 5 12 5 12 5s-7.2 0-8.8.4c-.9.2-1.6.9-1.8 1.8C1 8.7 1 12 1 12s0 3.3.4 4.8c.2.9.9 1.6 1.8 1.8C4.8 19 12 19 12 19s7.2 0 8.8-.4c.9-.2 1.6-.9 1.8-1.8C23 15.3 23 12 23 12zM9.8 15.3V8.7l5.8 3.3-5.8 3.3z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span data-year></span> Douradinho. Feito com carinho.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" data-back-to-top aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/historias.js"></script>
+</body>
+</html>

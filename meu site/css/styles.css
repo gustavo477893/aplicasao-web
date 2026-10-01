@@ -1,0 +1,997 @@
+/* ==========================================================================
+   Douradinho — Estilos globais (tema azul)
+   ========================================================================== */
+
+:root {
+  --azul-900: #0A1F44;
+  --azul-700: #123A7A;
+  --azul-500: #1E63C4;
+  --azul-300: #5B9BF0;
+  --azul-100: #E8F1FC;
+  --branco:   #FFFFFF;
+  --dourado:  #F5C542;
+
+  --fonte-titulo: "Outfit", system-ui, sans-serif;
+  --fonte-corpo:  "Inter", system-ui, sans-serif;
+
+  --raio-sm: 8px;
+  --raio-md: 12px;
+  --raio-lg: 16px;
+
+  --sombra-sm: 0 1px 3px rgba(10, 31, 68, 0.08);
+  --sombra-md: 0 6px 20px rgba(10, 31, 68, 0.12);
+  --sombra-lg: 0 16px 40px rgba(10, 31, 68, 0.18);
+
+  --transicao: 0.25s ease;
+
+  --largura-max: 1140px;
+}
+
+/* Reset básico */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  color: var(--azul-900);
+  background-color: var(--branco);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--azul-500);
+  text-decoration: none;
+  transition: color var(--transicao);
+}
+
+a:hover {
+  color: var(--azul-300);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--azul-900);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--largura-max);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--azul-100);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 72px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--azul-900);
+  text-decoration: none;
+}
+
+.logo:hover {
+  color: var(--azul-500);
+}
+
+.logo-mark {
+  display: grid;
+  place-items: center;
+}
+
+.logo-text {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+}
+
+.logo-text--light {
+  color: var(--branco);
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.main-nav a {
+  display: block;
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
+  color: var(--azul-700);
+  border-radius: 999px;
+}
+
+.main-nav a:hover {
+  color: var(--azul-500);
+  background: var(--azul-100);
+}
+
+.main-nav a.is-active {
+  color: var(--branco);
+  background: var(--azul-500);
+}
+
+/* Botão hambúrguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.menu-bar {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: var(--azul-900);
+  border-radius: 2px;
+  transition: transform var(--transicao), opacity var(--transicao);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-bar:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+.menu-toggle[aria-expanded="true"] .menu-bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle[aria-expanded="true"] .menu-bar:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   Hero (página inicial)
+   ========================================================================== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--azul-900) 0%, var(--azul-700) 100%);
+  color: var(--branco);
+  padding: clamp(4rem, 12vh, 7rem) 0 5rem;
+}
+
+.hero-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.shape-1 { width: 380px; height: 380px; top: -120px; right: -80px; }
+.shape-2 { width: 240px; height: 240px; bottom: -60px; left: 8%; background: rgba(245, 197, 66, 0.10); }
+.shape-3 { width: 140px; height: 140px; top: 30%; left: 12%; background: rgba(91, 155, 240, 0.18); }
+
+.hero-content {
+  position: relative;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--azul-300);
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 12vw, 9rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  background: linear-gradient(180deg, var(--azul-300) 0%, var(--branco) 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1rem;
+}
+
+.hero-tagline {
+  max-width: 46ch;
+  margin: 0 auto 2rem;
+  font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: center;
+}
+
+.hero-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  line-height: 0;
+}
+
+/* Animações de entrada */
+[data-animate] {
+  animation: fadeUp 0.7s ease both;
+}
+.hero-title {
+  animation: fadeUp 0.7s ease both;
+}
+.hero-tagline {
+  animation: fadeUp 0.7s 0.15s ease both;
+}
+.hero-actions {
+  animation: fadeUp 0.7s 0.3s ease both;
+}
+.hero-eyebrow {
+  animation: fadeUp 0.7s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Botões
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.7rem;
+  border-radius: 999px;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform var(--transicao), background var(--transicao), color var(--transicao), border-color var(--transicao), box-shadow var(--transicao);
+}
+
+.btn-primary {
+  background: var(--azul-500);
+  color: var(--branco);
+}
+
+.btn-primary:hover {
+  background: var(--azul-300);
+  color: var(--branco);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-md);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--branco);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-ghost:hover {
+  border-color: var(--branco);
+  color: var(--branco);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+.link-arrow::after {
+  content: "→";
+  transition: transform var(--transicao);
+}
+
+.link-arrow:hover::after {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Seções
+   ========================================================================== */
+.section {
+  padding: clamp(3rem, 8vw, 5.5rem) 0;
+}
+
+.section-tinted {
+  background: var(--azul-100);
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  margin-bottom: 0.5rem;
+}
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   Cards de destaque
+   ========================================================================== */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: var(--branco);
+  border-radius: var(--raio-lg);
+  padding: 1.75rem;
+  box-shadow: var(--sombra-sm);
+  border: 1px solid var(--azul-100);
+  transition: transform var(--transicao), box-shadow var(--transicao);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-md);
+}
+
+.highlight-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--raio-md);
+  background: var(--azul-100);
+  color: var(--azul-500);
+}
+
+.highlight-card p {
+  flex: 1;
+  color: rgba(10, 31, 68, 0.75);
+}
+
+/* ==========================================================================
+   Grade de histórias / cards de história
+   ========================================================================== */
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.story-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.story-card .story-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(10, 31, 68, 0.6);
+}
+
+.story-card h3 {
+  font-size: 1.25rem;
+}
+
+.story-card .story-author {
+  font-weight: 600;
+  color: var(--azul-500);
+  font-size: 0.95rem;
+}
+
+.story-card .story-resumo {
+  flex: 1;
+  color: rgba(10, 31, 68, 0.78);
+}
+
+.btn-read {
+  align-self: flex-start;
+  background: var(--azul-100);
+  color: var(--azul-500);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background var(--transicao), color var(--transicao);
+}
+
+.btn-read:hover {
+  background: var(--azul-500);
+  color: var(--branco);
+}
+
+.separator-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(10, 31, 68, 0.4);
+}
+
+/* Skeleton (estado de carregamento) */
+.skeleton-card {
+  min-height: 220px;
+  border-radius: var(--raio-lg);
+  background: linear-gradient(100deg, var(--azul-100) 40%, #f2f7fd 50%, var(--azul-100) 60%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+.skeleton-festa {
+  min-height: 140px;
+}
+
+@keyframes shimmer {
+  to { background-position: -200% 0; }
+}
+
+/* Estados de erro e vazio */
+.empty-state,
+.error-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: rgba(10, 31, 68, 0.7);
+}
+
+.empty-state h2,
+.error-state h2 {
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   Busca
+   ========================================================================== */
+.search-bar {
+  position: relative;
+  max-width: 560px;
+  margin-bottom: 0.75rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--azul-500);
+  pointer-events: none;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.9rem 1rem 0.9rem 3rem;
+  font-size: 1rem;
+  font-family: var(--fonte-corpo);
+  border: 2px solid var(--azul-100);
+  border-radius: var(--raio-lg);
+  background: var(--branco);
+  transition: border-color var(--transicao), box-shadow var(--transicao);
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--azul-500);
+  box-shadow: 0 0 0 4px rgba(30, 99, 196, 0.15);
+}
+
+.search-hint {
+  color: rgba(10, 31, 68, 0.6);
+  font-size: 0.9rem;
+  min-height: 1.4em;
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   Modal
+   ========================================================================== */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 31, 68, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+.modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: var(--branco);
+  border-radius: var(--raio-lg);
+  box-shadow: var(--sombra-lg);
+  padding: 2rem;
+  animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--azul-100);
+  color: var(--azul-700);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background var(--transicao), color var(--transicao);
+}
+
+.modal-close:hover {
+  background: var(--azul-500);
+  color: var(--branco);
+}
+
+.modal-meta {
+  color: rgba(10, 31, 68, 0.6);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 0.35rem;
+  padding-right: 2rem;
+}
+
+.modal-author {
+  font-weight: 600;
+  color: var(--azul-500);
+  margin-bottom: 1.25rem;
+}
+
+.modal-content {
+  white-space: pre-line;
+  color: rgba(10, 31, 68, 0.85);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Página interna (page-hero)
+   ========================================================================== */
+.page-hero {
+  background: linear-gradient(160deg, var(--azul-900) 0%, var(--azul-700) 100%);
+  color: var(--branco);
+  padding: 3rem 0 3.5rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.breadcrumb a {
+  color: var(--azul-300);
+}
+
+.breadcrumb a:hover {
+  color: var(--branco);
+}
+
+.breadcrumb span {
+  margin-inline: 0.4rem;
+}
+
+.page-title {
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  color: var(--branco);
+}
+
+.page-subtitle {
+  margin-top: 0.5rem;
+  max-width: 60ch;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ==========================================================================
+   Festas
+   ========================================================================== */
+.festas-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.festa-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.festa-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 84px;
+  border-radius: var(--raio-md);
+  background: linear-gradient(180deg, var(--azul-500), var(--azul-700));
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+  line-height: 1;
+}
+
+.festa-date .dia {
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.festa-date .mes {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.festa-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+}
+
+.festa-info .festa-local {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(10, 31, 68, 0.65);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.festa-info .festa-local-data {
+  font-weight: 600;
+  color: var(--azul-700);
+  margin-bottom: 0.25rem;
+}
+
+.festa-info p {
+  color: rgba(10, 31, 68, 0.78);
+}
+
+.badge-proxima {
+  display: inline-block;
+  background: var(--dourado);
+  color: var(--azul-900);
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+
+.festa-past {
+  opacity: 0.65;
+}
+
+/* ==========================================================================
+   Sobre (página inicial)
+   ========================================================================== */
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.sobre-text p {
+  margin-bottom: 1rem;
+  color: rgba(10, 31, 68, 0.8);
+}
+
+.sobre-card {
+  text-align: center;
+  background: var(--azul-100);
+  border-radius: var(--raio-lg);
+  padding: 2rem;
+}
+
+.sobre-emblem {
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.sobre-card figcaption {
+  font-size: 0.9rem;
+  color: rgba(10, 31, 68, 0.7);
+}
+
+/* ==========================================================================
+   Rodapé
+   ========================================================================== */
+.site-footer {
+  background: var(--azul-900);
+  color: rgba(255, 255, 255, 0.85);
+  padding-top: 3.5rem;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr auto;
+  gap: 2rem;
+  padding-bottom: 2.5rem;
+}
+
+.footer-brand p {
+  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 32ch;
+}
+
+.footer-nav ul {
+  list-style: none;
+}
+
+.footer-nav a {
+  display: inline-block;
+  padding: 0.25rem 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-nav a:hover {
+  color: var(--dourado);
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer-social a {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--branco);
+  transition: background var(--transicao), transform var(--transicao);
+}
+
+.footer-social a:hover {
+  background: var(--azul-500);
+  color: var(--branco);
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1.25rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ==========================================================================
+   Botão voltar ao topo
+   ========================================================================== */
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 40;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: var(--azul-500);
+  color: var(--branco);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: var(--sombra-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity var(--transicao), transform var(--transicao), visibility var(--transicao), background var(--transicao);
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--azul-700);
+}
+
+/* ==========================================================================
+   Foco visível (acessibilidade)
+   ========================================================================== */
+:focus-visible {
+  outline: 3px solid var(--dourado);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Responsividade
+   ========================================================================== */
+@media (max-width: 900px) {
+  .highlights,
+  .stories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sobre-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .highlights,
+  .stories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--branco);
+    border-bottom: 1px solid var(--azul-100);
+    box-shadow: var(--sombra-md);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transicao);
+  }
+
+  .main-nav.is-open {
+    max-height: 260px;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    padding: 0.75rem 1.25rem 1rem;
+    gap: 0.25rem;
+  }
+
+  .main-nav a {
+    border-radius: var(--raio-sm);
+  }
+
+  .main-nav a.is-active {
+    color: var(--branco);
+    background: var(--azul-500);
+  }
+
+  .festa-card {
+    grid-template-columns: 1fr;
+  }
+
+  .festa-date {
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    padding: 0.6rem 1rem;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+}
+
+/* ==========================================================================
+   prefers-reduced-motion (acessibilidade)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "historias": [
+    {
+      "id": "historia-005",
+      "titulo": "A primeira vez que vi o Douradinho",
+      "autor": "Beatriz Nogueira",
+      "data": "2026-10-01",
+      "resumo": "Eu era criança e não acreditava nas histórias que as pessoas contavam — até o dia em que o Douradinho apareceu na festa da escola.",
+      "conteudo": "Eu tinha nove anos e achava que o Douradinho era só uma lenda que os adultos inventavam para divertir a criançada. Na festa junina da escola, quando as luzes do pátio se acenderam, ele apareceu no meio do arraiá com um chapéu dourado e um sorriso que acalmava todo mundo.\n\nNinguém sabia explicar como ele tinha chegado ali tão de repente. Ele cumprimentou cada criança pelo nome, como se nos conhecesse a vida inteira, e no final da noite deixou um bilhetinho no meu caderno: \"Acredite sempre, Beatriz.\"\n\nGuardo esse bilhete até hoje. Foi a partir daquele dia que entendi: o Douradinho existe porque a gente acredita nele."
+    },
+    {
+      "id": "historia-004",
+      "titulo": "O aniversário surpresa do Douradinho",
+      "autor": "Carla Mendes",
+      "data": "2026-09-01",
+      "resumo": "Quisemos fazer uma surpresa para o Douradinho e acabamos descobrindo que ele é quem mais sabe surpreender a gente.",
+      "conteudo": "A vizinhança inteira se juntou para preparar uma festa surpresa de aniversário para o Douradinho. Enchemos a rua de balões dourados e azuis, bolos de fubá, quentão sem álcool e muita música.\n\nQuando ele chegou, em vez de se surpreender, ele já veio sorrindo como se soubesse de tudo. Mas o melhor foi o que aconteceu depois: ele passou a noite inteira fazendo surpresas para cada convidado — um desenho para a Dona Rosa, um livro para o seu Zé, uma roda de viola para os mais velhos.\n\nNo fim, quem ganhou presentes fomos todos nós."
+    },
+    {
+      "id": "historia-003",
+      "titulo": "A festa que virou chuva de confete",
+      "autor": "João Pedro Almeida",
+      "data": "2026-08-15",
+      "resumo": "Uma chuva de verão ameaçou acabar com a festa, mas o Douradinho transformou o contratempo na parte mais bonita da noite.",
+      "conteudo": "Estava tudo pronto para a festa na praça quando o céu escureceu e começou a chover. As pessoas correram para debaixo das marquises, achando que a comemoração tinha acabado.\n\nO Douradinho, então, subiu em um banco e começou a cantar debaixo da chuva, batendo palmas para marcar o ritmo. Um a um, todo mundo foi saindo do abrigo e dançando junto. A chuva molhava o cabelo das crianças e arrancava risadas dos adultos.\n\nQuando a chuva passou e o sol se pôs, alguém estourou os confetes. Parecia que tinha chovido papel colorido do céu. Ninguém esqueceu aquela noite."
+    },
+    {
+      "id": "historia-002",
+      "titulo": "O guarda-chuva de dia de sol",
+      "autor": "Maria Aparecida Souza",
+      "data": "2026-07-20",
+      "resumo": "Um gesto simples do Douradinho em um dia de sol forte ensinou a comunidade o valor de cuidar uns dos outros.",
+      "conteudo": "Naquele dia o sol estava forte, e a feira da cidade fervia de gente. Dona Marta, já com certa idade, andava devagar pelo meio da multidão, sem lugar para se abrigar do calor.\n\nO Douradinho apareceu carregando um guarda-chuva dourado, desses grandes de feira, e foi abrindo caminho ao lado dela. Ofereceu o braço, abriu o guarda-chuva como se fossem passear na chuva e a acompanhou até a sombra de um flamboyant.\n\nDepois disso, virou tradição: em dia de sol forte, sempre tem alguém com guarda-chuva aberto ajudando quem precisa. Foi o Douradinho que nos ensinou."
+    },
+    {
+      "id": "historia-001",
+      "titulo": "Quando o Douradinho ajudou na colheita",
+      "autor": "Seu Antônio Ribeiro",
+      "data": "2026-06-10",
+      "resumo": "No sítio do meu avô, o Douradinho deu uma mão na colheita e deixou uma lição que a família nunca esqueceu.",
+      "conteudo": "Era tempo de colheita e a chuva tinha atrasado o serviço. Meu avô acordou antes do sol e encontrou o Douradinho já na porteira, de galocha e chapéu de palha, pronto para ajudar.\n\nTrabalhamos a manhã inteira juntos. Ele sabia exatamente onde cada fruta estava madura, parecia conversar com a terra. No almoço, contou causos antigos que fizeram até o meu avô, um homem sério, gargalhar alto.\n\nQuando a colheita terminou, ele recusou qualquer pagamento e disse apenas: \"Quem planta junto, colhe junto.\" Meu avô repetiu essa frase para os netos até o fim da vida."
+    }
+  ]
+}

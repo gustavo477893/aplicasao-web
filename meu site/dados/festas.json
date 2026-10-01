@@ -1,0 +1,25 @@
+{
+  "festas": [
+    {
+      "id": "festa-003",
+      "nome": "Carnaval do Douradinho",
+      "data": "2027-02-14",
+      "local": "Avenida Principal, Centro",
+      "descricao": "Blocos de rua, fantasias douradas e muita marchinha. O encerramento conta com o tradicional desfile do Douradinho iluminando a avenida."
+    },
+    {
+      "id": "festa-002",
+      "nome": "Natal Dourado",
+      "data": "2026-12-20",
+      "local": "Centro de Eventos Santa Luzia",
+      "descricao": "Cantata de Natal, árvore gigante iluminada e a chegada do Douradinho distribuindo abraços e lembrancinhas para as crianças."
+    },
+    {
+      "id": "festa-001",
+      "nome": "Festa de Primavera do Douradinho",
+      "data": "2026-10-18",
+      "local": "Praça Central, Centro",
+      "descricao": "A grande festa de abertura da temporada: flores, música ao vivo, comidas típicas e a presença especial do Douradinho para abrir os festejos."
+    }
+  ]
+}
